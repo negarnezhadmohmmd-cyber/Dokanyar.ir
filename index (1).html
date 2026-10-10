@@ -1,0 +1,464 @@
+<!DOCTYPE html<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دکان‌یار | کارگشا</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<style>
+:root{--bg:#F5F2EA;--card:#FFFFFF;--ink:#20242E;--mut:#8B8F99;--br:#EAE3D3;--or:#E86A1F;--or2:#C2530F;--gn:#0E7A5B;--bl:#2456A6;--rd:#D64545;--sh:0 6px 20px rgba(35,22,4,.07),0 1px 3px rgba(35,22,4,.05)}
+*{box-sizing:border-box;font-family:Vazirmatn,Tahoma;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);padding-bottom:100px}
+header{background:radial-gradient(700px 300px at 85% -60%,rgba(232,106,31,.35),transparent 60%),linear-gradient(135deg,#15161A 52%,#E86A1F 165%);color:#fff;padding:20px 16px 30px;text-align:center;border-radius:0 0 28px 28px}
+.logo{display:flex;gap:12px;align-items:center;justify-content:center}
+.mark{width:56px;height:56px;background:#FFF7ED;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;border:2px solid var(--or);box-shadow:0 6px 18px rgba(232,106,31,.4)}
+header b{color:#FFB27A;font-size:19px;display:block}
+header small{color:#DDD8CE;font-size:11.5px;display:block;margin-top:2px}
+.ticker{background:#191A1F;color:#FFB27A;font-size:11.5px;padding:8px 12px;white-space:nowrap;overflow:hidden;text-align:center}
+.trial{background:#111318;color:#FFD9BC;font-size:12px;padding:8px;text-align:center;border-bottom:1px solid #2a2b31}
+.hero{margin:-16px 12px 0;background:var(--card);border-radius:20px;padding:14px;display:flex;gap:12px;align-items:center;box-shadow:var(--sh);border:1px solid var(--br)}
+.hero .dot{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--or),#7a2f05);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.hero b{font-size:14.5px}.hero small{color:var(--mut);font-size:11.5px}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px}
+.quick div{background:var(--card);border:1px solid var(--br);border-radius:15px;padding:11px 4px;text-align:center;font-size:11.5px;font-weight:800;box-shadow:var(--sh);cursor:pointer;transition:.15s}
+.quick div:active{transform:scale(.96);border-color:var(--or)}
+.card{background:var(--card);margin:12px;border-radius:20px;padding:16px;box-shadow:var(--sh);border:1px solid var(--br)}
+.card h3{margin:0 0 12px;font-size:14.5px;display:flex;align-items:center;gap:6px}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat>div{border-radius:16px;padding:12px 10px;color:#fff;display:flex;flex-direction:column;gap:5px}
+.stat span{font-size:11px;opacity:.92;font-weight:700}
+.stat strong{font-size:14px;direction:ltr;text-align:right}
+.q1{background:linear-gradient(135deg,#f97316,#7c2d12)}.q2{background:linear-gradient(135deg,#059669,#022c22)}.q3{background:linear-gradient(135deg,#2563eb,#172554)}.q4{background:linear-gradient(135deg,#dc2626,#450a0a)}
+.f{display:flex;flex-direction:column;gap:4px;margin:9px 0}
+.f label{font-size:11.5px;color:var(--mut);font-weight:800}
+input,select{width:100%;padding:12px 13px;border:1.8px solid var(--br);border-radius:13px;font-size:15px;background:#FDFCF9;color:var(--ink);transition:.18s}
+input.money{direction:ltr;text-align:left;font-weight:800}
+input:focus,select:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 3.5px rgba(232,106,31,.14);background:#fff}
+.row{display:flex;gap:8px}.row>*{flex:1;min-width:0}
+.btn{width:100%;background:var(--or);color:#fff;border:none;padding:13px;border-radius:13px;font-size:14.5px;font-weight:800;margin-top:8px;cursor:pointer;box-shadow:0 5px 16px rgba(232,106,31,.28);transition:.15s;font-family:Vazirmatn,Tahoma}
+.btn:active{transform:scale(.97)}
+.btn.blue{background:var(--bl);box-shadow:0 5px 16px rgba(36,86,166,.25)}
+.btn.green{background:var(--gn);box-shadow:0 5px 16px rgba(14,122,91,.25)}
+.btn.dark{background:#23252C;box-shadow:0 5px 16px rgba(0,0,0,.18)}
+.btn.red{background:var(--rd);box-shadow:0 5px 16px rgba(214,69,69,.25)}
+.btn.gh{background:#fff;color:var(--ink);border:1.8px solid var(--br);box-shadow:none}
+.btn.sm{width:auto;padding:7px 13px;font-size:12px;margin:0;border-radius:10px}
+nav{position:fixed;bottom:0;right:0;left:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);display:flex;border-top:1px solid var(--br);z-index:90;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -6px 24px rgba(35,22,4,.08)}
+nav button{flex:1;background:none;border:none;padding:11px 2px 9px;font-size:10.5px;font-weight:800;color:#9AA0AA;cursor:pointer;line-height:1.7}
+nav button i{font-style:normal;font-size:19px;display:block}
+nav button.on{color:var(--or2);box-shadow:inset 0 3px 0 var(--or);background:linear-gradient(#FFF4EA,#fff)}
+.page{display:none;animation:fade .22s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.item{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#FAF7F0;border:1px solid var(--br);padding:11px 12px;border-radius:14px;margin:7px 0;font-size:13px}
+.item small{color:var(--mut);font-size:11px}
+.cat{font-size:11.5px;color:var(--or2);font-weight:800;margin:12px 2px 2px;display:flex;align-items:center;gap:5px}
+.live{color:var(--gn);font-size:12.5px;font-weight:800;min-height:17px;margin:2px 0}
+.total{background:linear-gradient(135deg,#15161A,#2A2B33);color:#fff;padding:13px;border-radius:14px;text-align:center;margin-top:10px;font-size:14px}.total b{color:#FFB27A;font-size:16px}
+.bars{display:flex;align-items:flex-end;gap:7px;height:92px;padding-top:4px}
+.bar{flex:1;background:linear-gradient(180deg,var(--or),#FFD9BC);border-radius:7px 7px 3px 3px;min-height:8px;transition:.3s}
+.barlbl{display:flex;gap:7px;font-size:10px;color:var(--mut);text-align:center;margin-top:5px;font-weight:700}
+.barlbl div{flex:1}
+.restock{background:linear-gradient(135deg,#15161A,#2A2B33);color:#fff;border-radius:15px;padding:13px;margin-top:10px;text-align:center;font-size:13px}.restock b{color:#4ade80}
+.ai{background:linear-gradient(145deg,#064E3B,#022C22);color:#fff;border:none}
+.ai h3{color:#A7F3D0}.ai .item{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}
+.empty{color:var(--mut);font-size:12.5px;text-align:center;padding:12px}
+#lock{position:fixed;inset:0;background:rgba(14,14,18,.94);display:none;z-index:100;padding:26px 16px;overflow:auto;backdrop-filter:blur(6px)}
+#lock .lhead{text-align:center;color:#fff;margin-bottom:6px}
+#lock .lhead div{font-size:44px}
+.plan{background:#fff;border-radius:18px;padding:16px;margin:12px auto;text-align:center;max-width:420px;position:relative}
+.plan.hot{border:3px solid var(--or)}
+.plan b{font-size:16px}
+.plan .p{font-size:21px;font-weight:900;color:var(--or2);margin:6px 0}
+.badge{position:absolute;top:-11px;right:14px;background:var(--or);color:#fff;font-size:10.5px;padding:3px 12px;border-radius:12px;font-weight:800}
+.devbox{background:#FFF4EA;border:1.5px dashed var(--or);border-radius:14px;padding:12px;text-align:center;margin:10px 0}
+.devbox .t{font-size:11.5px;color:var(--or2);font-weight:800}
+.devbox b{font-size:23px;letter-spacing:5px;direction:ltr;display:inline-block;color:var(--or2);margin:6px 0}
+.devbox small{color:var(--mut);font-size:11px;display:block}
+.licin{direction:ltr;text-align:center;font-weight:900;letter-spacing:3px;font-size:17px;text-transform:uppercase}
+#modal{position:fixed;inset:0;background:rgba(20,16,10,.55);z-index:110;display:none;align-items:center;justify-content:center;padding:20px}
+.mcard{background:#fff;border-radius:20px;padding:20px;width:100%;max-width:380px;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:pop .2s ease}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.mcard h4{margin:0 0 6px;font-size:15.5px}
+.mcard p{margin:0 0 10px;font-size:13px;color:var(--mut)}
+#toast{position:fixed;bottom:108px;left:50%;transform:translateX(-50%) translateY(12px);background:#15161A;color:#fff;padding:11px 20px;border-radius:26px;font-size:13px;font-weight:700;z-index:120;opacity:0;transition:.28s;pointer-events:none;max-width:88%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.3);border:1px solid #ffffff22}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+#toast.ok{background:var(--gn)}#toast.bad{background:var(--rd)}
+.mut{color:var(--mut)}.grn{color:var(--gn)}.red{color:var(--rd)}
+</style>
+</head>
+<body>
+<header><div class="logo"><div class="mark">🏪</div><div style="text-align:right"><b>دکان‌یار | کارگشا</b><small>دفتر حساب مغازه‌دار مدرن • نسخه فروشگاهی</small></div></div></header>
+<div class="ticker">💹 سود روزانه &nbsp;•&nbsp; 📦 کنترل انبار &nbsp;•&nbsp; 📒 نسیه &nbsp;•&nbsp; 💳 چک &nbsp;•&nbsp; 🤖 دستیار قیمت &nbsp;•&nbsp; 🔓 کارگشا</div>
+<div class="trial" id="trialbar">🎁 ۲۰ روز رایگان فعال است</div>
+
+<div id="lock"><div class="lhead"><div>🔒</div><h3 style="margin:4px 0">دوره رایگان تموم شد</h3><small style="color:#aaa">برای ادامه، اشتراک را فعال کن</small></div>
+<div class="devbox"><span class="t">🔑 کد دستگاه شما</span><br><b id="devcode1">—</b><button class="btn blue sm" onclick="copyDev()">کپی کد دستگاه 📋</button><small>این کد را برای فروشنده بفرستید تا کد فعال‌سازی بگیرید</small></div>
+<div class="plan"><b>هفتگی</b><div class="p">۱۳۹٬۰۰۰ تومان</div><button class="btn blue" onclick="orderPlan('هفتگی')">سفارش و پرداخت 📲</button></div>
+<div class="plan hot"><span class="badge">⭐ پیشنهاد ما</span><b>ماهانه</b><div class="p">۵۰۰٬۰۰۰ تومان</div><button class="btn" onclick="orderPlan('ماهانه')">سفارش و پرداخت 📲</button></div>
+<div class="plan"><b>💎 سالانه</b><div class="p">۴٬۸۰۰٬۰۰۰ تومان</div><button class="btn green" onclick="orderPlan('سالانه')">سفارش و پرداخت 📲</button></div>
+<div class="plan" style="background:#FFF4EA"><b>🔓 کد فعال‌سازی دارید؟</b>
+<div class="f"><input id="licIn" class="licin" placeholder="DKY-XXXXXXX" oninput="this.value=this.value.toUpperCase()"></div>
+<button class="btn green" onclick="activateLicense()">فعال‌سازی اشتراک 🔓</button></div>
+<div style="text-align:center;margin-top:8px"><button onclick="hideLock()" style="background:none;border:none;color:#999;font-family:Vazirmatn">بستن</button></div></div>
+
+<div class="hero"><div class="dot">👋</div><div><b>سلام رفیق! دخل امروز چطوره؟</b><br><small>فاکتور بزن، موجودی کم میشه، سود حساب میشه</small></div></div>
+
+<div id="pg1" class="page on">
+<div class="quick">
+<div onclick="go(2)">🧾<br>فاکتور</div><div onclick="go(3)">📦<br>انبار</div><div onclick="go(4)">📒<br>نسیه</div><div onclick="go(5)">💹<br>سود ماه</div>
+</div>
+<div class="card"><h3>📊 نمای امروز مغازه</h3><div class="stat">
+<div class="q1"><span>💰 فروش کل</span><strong id="s_sale">۰</strong></div>
+<div class="q2"><span>💹 سود خالص</span><strong id="s_profit">۰</strong></div>
+<div class="q3"><span>📒 طلب از مشتری</span><strong id="s_debt">۰</strong></div>
+<div class="q4"><span>⚠️ ناموجود</span><strong id="s_zero">۰ قلم</strong></div>
+</div></div>
+<div class="card"><h3>🚨 تموم‌شده‌ها + هزینه شارژ</h3><div id="stock_warn"></div><div class="restock" id="restock_total"></div></div>
+<div class="card"><h3>📈 نمودار فروش ۷ روز اخیر</h3><div class="bars" id="chart"></div><div class="barlbl" id="chartlbl"></div></div>
+<div class="card ai"><h3>🤖 دستیار هوشمند قیمت</h3>
+<div class="f"><label>قیمت خرید (تومان)</label><input id="ai_buy" class="money" placeholder="مثلا 5,000" oninput="fmtBox(this)"></div>
+<div class="f"><label>درصد سود دلخواه</label><input id="ai_margin" type="number" placeholder="مثلا 20"></div>
+<button class="btn green" onclick="doAi()">پیشنهاد قیمت 💡</button><div id="ai_out"></div></div>
+<div class="card"><h3>🧾 آخرین فاکتورها + ارسال</h3><div id="lasts"></div></div>
+</div>
+
+<div id="pg2" class="page">
+<div class="card"><h3>🧾 فاکتور جدید</h3>
+<div class="f"><label>نام مشتری</label><input id="cname" placeholder="مثلا آقا رضا"></div>
+<div class="f"><label>موبایل مشتری (برای نسیه و ارسال فاکتور)</label><input id="cphone" type="tel" inputmode="numeric" placeholder="09xxxxxxxxx" style="direction:ltr;text-align:left"></div>
+<div class="f"><label>کالا و تعداد</label><div class="row"><select id="psel"></select><input id="qty" type="number" value="1" min="1" style="max-width:80px;flex:none"></div></div>
+<button class="btn blue" onclick="doAdd()">+ افزودن به سبد 🛒</button>
+<div id="cart"></div>
+<div class="total">جمع نهایی: <b id="ctotal">۰</b> تومان</div>
+<div class="f"><label>نوع پرداخت</label><select id="ptype"><option value="cash">نقدی 💵</option><option value="debt">نسیه 📒 (شماره مشتری لازم است)</option></select></div>
+<button class="btn" onclick="doSaveInv()">ثبت فاکتور ✅</button>
+<div class="row" style="margin-top:8px"><button class="btn green sm" style="flex:1" onclick="sendLast('wa')">واتساپ 📲</button><button class="btn blue sm" style="flex:1" onclick="sendLast('sms')">پیامک 📩</button></div>
+</div>
+</div>
+
+<div id="pg3" class="page">
+<div class="card"><h3>📦 ثبت / ویرایش کالا</h3>
+<div class="f"><label>نام کالا</label><input id="prname" placeholder="مثلا شیشه نوشابه"></div>
+<div class="f"><label>دسته‌بندی</label><select id="prcat"><option>سوپرمارکتی</option><option>لبنیات</option><option>حبوبات</option><option>نوشیدنی</option><option>بهداشتی</option><option>متفرقه</option></select></div>
+<div class="f"><label>موجودی فعلی</label><input id="prstock" type="number" min="0" placeholder="مثلا 20"></div>
+<div class="row"><div class="f"><label>قیمت فروش (تومان)</label><input id="prprice" class="money" placeholder="5,000" oninput="fmtBox(this)"><div class="live" id="pv1"></div></div>
+<div class="f"><label>قیمت خرید (تومان)</label><input id="prbuy" class="money" placeholder="4,000" oninput="fmtBox(this)"><div class="live" id="pv2"></div></div></div>
+<button class="btn" onclick="doSaveProd()">ثبت کالا ✅</button></div>
+<div class="card"><h3>📋 انبار دسته‌بندی‌شده</h3><div id="plist"></div></div>
+</div>
+
+<div id="pg4" class="page">
+<div class="card"><h3>📒 بدهکارها (دفتر نسیه)</h3><div id="debts"></div></div>
+<div class="card"><h3>💳 ثبت چک</h3>
+<div class="f"><label>بابت کی؟</label><input id="chname" placeholder="نام یا موضوع"></div>
+<div class="f"><label>مبلغ چک (تومان)</label><input id="chamount" class="money" placeholder="1,000,000" oninput="fmtBox(this)"><div class="live" id="pv3"></div></div>
+<div class="f"><label>تاریخ سررسید</label><input id="chdate" type="date"></div>
+<button class="btn" onclick="doSaveCh()">ثبت چک ✅</button><div id="chlist"></div></div>
+</div>
+
+<div id="pg5" class="page">
+<div class="card"><h3>📊 گزارش کلی</h3><div id="rep"></div><div id="subinfo"></div>
+<div class="row" style="margin-top:10px"><button class="btn dark sm" style="flex:1" onclick="showLock()">تمدید اشتراک ⭐</button><button class="btn gh sm" style="flex:1" onclick="backup()">پشتیبان‌گیری 📤</button></div>
+<div class="row" style="margin-top:8px"><button class="btn gh sm" style="flex:1" onclick="G('rf').click()">بازیابی فایل 📥</button><button class="btn red sm" style="flex:1" onclick="resetAll()">پاک‌سازی 🗑️</button></div>
+<input type="file" id="rf" accept=".json" style="display:none" onchange="restore(this)">
+</div>
+<div class="card"><h3>🔑 اشتراک و فعال‌سازی</h3>
+<div class="item"><span>کد دستگاه شما</span><span style="text-align:left"><b id="devcode2" style="direction:ltr;display:inline-block;letter-spacing:2px">—</b> <button class="btn dark sm" onclick="copyDev()">کپی</button></span></div>
+<p class="empty" style="padding:4px">برای خرید یا تمدید، کد دستگاه را برای فروشنده بفرستید و کد فعال‌سازی را اینجا وارد کنید:</p>
+<div class="f"><input id="licIn2" class="licin" placeholder="DKY-XXXXXXX" oninput="this.value=this.value.toUpperCase()"></div>
+<button class="btn green" onclick="activateLicense()">فعال‌سازی اشتراک 🔓</button>
+</div>
+</div>
+
+<nav>
+<button id="n1" class="on" onclick="go(1)"><i>🏠</i>خانه</button>
+<button id="n2" onclick="go(2)"><i>🧾</i>فاکتور</button>
+<button id="n3" onclick="go(3)"><i>📦</i>کالا</button>
+<button id="n4" onclick="go(4)"><i>📒</i>حساب</button>
+<button id="n5" onclick="go(5)"><i>📊</i>گزارش</button>
+</nav>
+
+<div id="modal"><div class="mcard">
+<h4 id="mTitle"></h4><p id="mMsg"></p>
+<input id="mInput" class="money" style="display:none">
+<div class="row" style="margin-top:12px"><button class="btn gh sm" style="flex:1" onclick="modalClose()">انصراف</button><button class="btn sm" style="flex:1" onclick="modalOk()">تأیید</button></div>
+</div></div>
+
+<div id="toast"></div>
+
+<script>
+'use strict';
+/* ============ ابزار امن ============ */
+function G(id){return document.getElementById(id)}
+var mem={};
+var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return (k in mem)?mem[k]:null}},
+           set:function(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}},
+           del:function(k){try{localStorage.removeItem(k)}catch(e){delete mem[k]}}};
+function fa(n){return Number(n||0).toLocaleString('en-US')}
+function toman(n){return fa(n)+' تومان'}
+function clean(s){s=String(s==null?'':s).replace(/[۰-۹]/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)}).replace(/[^0-9]/g,'');return Number(s||0)}
+function fmtBox(el){var v=clean(el.value);if(!v){el.value='';return}el.value=fa(v)}
+function nice(v){if(v<1000)return Math.ceil(v/100)*100;if(v<10000)return Math.ceil(v/500)*500;return Math.ceil(v/1000)*1000}
+function dayKey(ts){var d=new Date(ts);return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function fmtDate(ts){try{return new Date(ts).toLocaleDateString('fa-IR')+' • '+new Date(ts).toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'})}catch(e){return new Date(ts).toLocaleString()}}
+function fmtCh(s){try{return new Date(s+'T12:00:00').toLocaleDateString('fa-IR')}catch(e){return s}}
+function intl(p){p=String(p||'').replace(/\D/g,'');if(p.indexOf('0')===0&&p.length===11)return '98'+p.slice(1);if(p.length===10&&p[0]==='9')return '98'+p;return p}
+var WD=['ی','د','س','چ','پ','ج','ش'];
+
+/* ============ موتور لایسنس (باید با فایل ساخت کد یکسان باشد) ============ */
+var SECRET='DOKANYAR#KARGOSHA#1404';
+var ALPHA='ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+function hash32(s){var h=5381,i;for(i=0;i<s.length;i++){h=(((h<<5)+h)+s.charCodeAt(i))>>>0}return h>>>0}
+function genDev(){var s='',i,arr=new Uint32Array(5);
+ try{crypto.getRandomValues(arr)}catch(e){for(i=0;i<5;i++)arr[i]=Math.floor(Math.random()*4294967296)}
+ for(i=0;i<5;i++)s+=ALPHA.charAt(arr[i]%ALPHA.length);
+ return s}
+function makeDigest(p,dev){var h=hash32(SECRET+'|'+p+'|'+dev),s='',i;
+ for(i=0;i<6;i++){s+=ALPHA.charAt(h%ALPHA.length);h=Math.floor(h/ALPHA.length)}
+ return s}
+function normCode(s){s=String(s||'').toUpperCase().replace(/[^A-Z0-9]/g,'');if(s.slice(0,3)==='DKY')s=s.slice(3);return s}
+function checkLicense(input){var c=normCode(input);
+ if(c.length!==7)return null;
+ var p=c.charAt(0),rest=c.slice(1);
+ if('WMY'.indexOf(p)<0)return null;
+ for(var i=0;i<rest.length;i++){if(ALPHA.indexOf(rest.charAt(i))<0)return null}
+ if(makeDigest(p,DB.dev)!==rest)return null;
+ return {p:p,days:p==='W'?7:p==='M'?30:365,name:p==='W'?'هفتگی':p==='M'?'ماهانه':'سالانه'}}
+
+/* ============ داده ============ */
+var DB={invs:[],prods:[],chks:[],custs:{},until:Date.now()+20*86400000,plan:'trial',dev:'',lastLic:''};
+try{var d0=JSON.parse(store.get('dky2')||'null');if(d0&&typeof d0==='object'){['invs','prods','chks','custs','until','plan','dev','lastLic'].forEach(function(k){if(d0[k]!==undefined)DB[k]=d0[k]})}}catch(e){}
+if(!DB.dev){DB.dev=genDev()}
+function save(){store.set('dky2',JSON.stringify(DB))}
+
+/* ============ پیام و دیالوگ ============ */
+var tT=null;
+function toast(m,kind){var el=G('toast');el.textContent=m;el.className=kind||'';el.classList.add('on');clearTimeout(tT);tT=setTimeout(function(){el.classList.remove('on')},2600)}
+var mCb=null;
+function modalOpen(o,cb){G('mTitle').textContent=o.title;G('mMsg').textContent=o.msg||'';var inp=G('mInput');
+ if(o.input){inp.style.display='block';inp.value=o.def!=null?fa(o.def):'';setTimeout(function(){inp.focus()},80)}else inp.style.display='none';
+ mCb=cb;G('modal').style.display='flex'}
+function modalClose(){G('modal').style.display='none';mCb=null}
+function modalOk(){if(!mCb)return modalClose();var v=clean(G('mInput').value);var cb=mCb;modalClose();cb(v)}
+G('mInput').addEventListener('keydown',function(e){if(e.key==='Enter')modalOk()});
+function askNum(title,msg,def,cb){modalOpen({title:title,msg:msg,input:true,def:def},function(v){if(!v){toast('مقداری وارد نشد','bad');return}cb(v)})}
+function confirmBox(title,msg,cb){modalOpen({title:title,msg:msg},function(){cb()})}
+
+/* ============ کپی ============ */
+function copyText(t,okMsg){
+ var done=function(){toast(okMsg||'کپی شد ✅','ok')};
+ function fallback(){
+  try{var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();var ok=document.execCommand('copy');document.body.removeChild(ta);if(ok)done();else toast('کپی نشد — کد را دستی یادداشت کنید','bad')}
+  catch(e){toast('کپی نشد — کد را دستی یادداشت کنید','bad')}}
+ try{
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback);return}
+ }catch(e){}
+ fallback()}
+function copyDev(){copyText(DB.dev,'کد دستگاه کپی شد 📋')}
+
+/* ============ اشتراک و فعال‌سازی ============ */
+/* ⚠️ شماره واتساپ فروشنده (خودت) — با کد کشور و بدون + ؛ مثلا: 989121234567
+   اگر خالی بماند، دکمه سفارش فقط کد دستگاه را کپی می‌کند. */
+var SELLER_WHATSAPP='';
+function daysLeft(){return Math.max(0,Math.ceil((Number(DB.until||0)-Date.now())/86400000))}
+function isTrial(){return DB.plan==='trial'}
+function subCheck(){var d=daysLeft();
+ if(d<=0){G('trialbar').innerHTML='⏰ دوره تمام شده — اشتراک فعال کنید';showLock()}
+ else if(isTrial())G('trialbar').innerHTML='🎁 '+fa(d)+' روز از دوره رایگان باقی مانده';
+ else G('trialbar').innerHTML='⭐ اشتراک فعال — '+fa(d)+' روز باقی مانده'}
+function showLock(){renderLicenseUI();G('lock').style.display='block'}
+function hideLock(){G('lock').style.display='none'}
+function orderPlan(name){
+ var msg='سلام! می‌خواهم اشتراک «'+name+'» دکان‌یار را بخرم.\nکد دستگاه من: '+DB.dev;
+ if(SELLER_WHATSAPP){try{window.open('https://wa.me/'+SELLER_WHATSAPP+'?text='+encodeURIComponent(msg),'_blank')}catch(e){copyDev()}}
+ else{copyDev();toast('کد دستگاه کپی شد — برای فروشنده بفرستید 📲','ok')}}
+function activateLicense(){
+ var v=G('licIn').value||G('licIn2').value;
+ var r=checkLicense(v);
+ if(!r){toast('کد فعال‌سازی معتبر نیست ❌','bad');return}
+ var base=Math.max(Date.now(),Number(DB.until||0));
+ DB.until=base+r.days*86400000;
+ DB.plan='sub';DB.lastLic=normCode(v);
+ save();
+ G('licIn').value='';G('licIn2').value='';
+ hideLock();subCheck();renderAll();
+ toast('اشتراک '+r.name+' فعال شد 🎉','ok')}
+function renderLicenseUI(){G('devcode1').textContent=DB.dev;G('devcode2').textContent=DB.dev}
+
+/* ============ ناوبری ============ */
+function go(n){for(var i=1;i<=5;i++){G('pg'+i).classList.toggle('on',i===n);G('n'+i).classList.toggle('on',i===n)}window.scrollTo(0,0)}
+
+/* ============ داشبورد ============ */
+function renderStats(){var t=0,p=0,k=dayKey(Date.now());
+ DB.invs.forEach(function(v){if(dayKey(v.ts)===k){t+=v.total;v.items.forEach(function(c){p+=(c.price-(c.buy||0))*c.qty})}});
+ var d=0;Object.keys(DB.custs).forEach(function(ph){d+=DB.custs[ph].debt||0});
+ var z=0;DB.prods.forEach(function(x){if(x.stock<=0)z++});
+ G('s_sale').textContent=fa(t);G('s_profit').textContent=fa(p);G('s_debt').textContent=fa(d);G('s_zero').textContent=fa(z)+' قلم'}
+function renderWarn(){var low=DB.prods.filter(function(p){return p.stock<=3}),h='';
+ if(!low.length)h='<div class="empty">همه چیز سر جاشه 👌</div>';
+ low.forEach(function(p){h+='<div class="item"><span>'+(p.stock<=0?'⛔ ':'⚠️ ')+p.name+'</span><span>موجودی: <b>'+(p.stock<=0?'ناموجود':fa(p.stock))+'</b></span></div>'});
+ G('stock_warn').innerHTML=h;
+ var cost=0;low.forEach(function(p){cost+=(10-p.stock)*(p.buy||0)});
+ G('restock_total').innerHTML=low.length?('هزینه شارژ انبار تا سطح ۱۰ عدد: <b>'+toman(cost)+'</b>'):'انبار شارجه ✅'}
+function renderChart(){var vals=[],lbls=[],i;
+ for(i=6;i>=0;i--){var d=new Date();d.setDate(d.getDate()-i);var k=dayKey(d.getTime()),s=0;
+  DB.invs.forEach(function(v){if(dayKey(v.ts)===k)s+=v.total});
+  vals.push(s);lbls.push(WD[d.getDay()])}
+ var mx=Math.max.apply(null,vals.concat([1]));
+ G('chart').innerHTML=vals.map(function(v){return '<div class="bar" style="height:'+Math.max(8,Math.round(v/mx*100))+'%" title="'+toman(v)+'"></div>'}).join('');
+ G('chartlbl').innerHTML=lbls.map(function(l){return '<div>'+l+'</div>'}).join('')}
+function renderLasts(){if(!DB.invs.length){G('lasts').innerHTML='<div class="empty">هنوز فاکتوری ثبت نشده</div>';return}
+ var h='';DB.invs.slice(0,3).forEach(function(v){var i=DB.invs.indexOf(v);
+  h+='<div class="item"><span>'+(v.type==='debt'?'📒 ':'💵 ')+v.name+'<br><small>'+fmtDate(v.ts)+' — '+fa(v.items.length)+' قلم</small></span><span style="text-align:left"><b>'+toman(v.total)+'</b><br><button class="btn green sm" onclick="sendInv('+i+',\'wa\')">واتساپ</button> <button class="btn blue sm" onclick="sendInv('+i+',\'sms\')">پیامک</button></span></div>'});
+ G('lasts').innerHTML=h}
+
+/* ============ دستیار قیمت ============ */
+function doAi(){var b=clean(G('ai_buy').value),m=Number(G('ai_margin').value||0);
+ if(!b){toast('اول قیمت خرید را وارد کنید','bad');return}
+ if(!m||m<=0)m=20;
+ var p=b*(1+m/100),r=nice(p);
+ G('ai_out').innerHTML='<div class="item"><span>قیمت پیشنهادی ⭐</span><b>'+toman(r)+'</b></div>'+
+ '<div class="item"><span>کف بازار</span><span>'+toman(nice(p*.95))+'</span></div>'+
+ '<div class="item"><span>بازارپسند</span><span>'+toman(nice(p*1.15))+'</span></div>'+
+ '<div class="item"><span>سود هر عدد</span><span class="grn">'+toman(r-b)+'</span></div>';
+ toast('پیشنهاد قیمت آماده شد 💡','ok')}
+
+/* ============ فاکتور ============ */
+var cart=[],lastInv=null;
+function renderPsel(){var h='<option value="">انتخاب کالا…</option>';
+ DB.prods.forEach(function(p){h+='<option value="'+p.name+'">'+p.name+' — موجودی '+fa(p.stock)+' — '+fa(p.price)+' ت</option>'});
+ G('psel').innerHTML=h}
+function doAdd(){var pn=G('psel').value;if(!pn){toast('اول از صفحه کالا، جنس ثبت کنید','bad');return}
+ var q=Math.max(1,Number(G('qty').value||1)),p=null;
+ DB.prods.forEach(function(x){if(x.name===pn)p=x});
+ if(!p)return;
+ if(q>p.stock){toast('موجودی کافی نیست! فقط '+fa(p.stock)+' عدد مونده','bad');return}
+ cart.push({name:p.name,qty:q,price:p.price,buy:p.buy||0});renderCart();toast('به سبد اضافه شد 🛒','ok')}
+function renderCart(){var h='',t=0;
+ cart.forEach(function(c,i){t+=c.price*c.qty;h+='<div class="item"><span>'+c.name+' × '+fa(c.qty)+'</span><span>'+toman(c.price*c.qty)+' <button class="btn red sm" onclick="delCart('+i+')">حذف</button></span></div>'});
+ if(!cart.length)h='<div class="empty">سبد خالی است</div>';
+ G('cart').innerHTML=h;G('ctotal').textContent=fa(t)}
+function delCart(i){cart.splice(i,1);renderCart()}
+function doSaveInv(){if(!cart.length){toast('سبد خالی است! جنس اضافه کنید','bad');return}
+ var name=G('cname').value.trim()||'مشتری',phone=clean(G('cphone').value),type=G('ptype').value,t=0;
+ if(type==='debt'&&!phone){toast('برای نسیه، شماره مشتری لازم است','bad');return}
+ cart.forEach(function(c){t+=c.price*c.qty});
+ var inv={ts:Date.now(),name:name,phone:phone,items:cart.slice(),total:t,type:type};
+ DB.invs.unshift(inv);
+ cart.forEach(function(c){DB.prods.forEach(function(p){if(p.name===c.name)p.stock=Math.max(0,p.stock-c.qty)})});
+ if(type==='debt'){if(!DB.custs[phone])DB.custs[phone]={name:name,debt:0};DB.custs[phone].name=name;DB.custs[phone].debt+=t}
+ save();lastInv=inv;cart=[];
+ G('cname').value='';G('cphone').value='';G('qty').value=1;G('ptype').value='cash';
+ renderCart();renderAll();
+ toast('فاکتور ثبت شد ✅'+(type==='debt'?' — به دفتر نسیه اضافه شد':''),'ok')}
+function invText(inv){var s='🧾 فاکتور فروش — دکان‌یار\n';inv.items.forEach(function(c){s+='• '+c.name+' × '+fa(c.qty)+' = '+toman(c.price*c.qty)+'\n'});
+ s+='جمع کل: '+toman(inv.total);if(inv.type==='debt')s+='\n(نسیه — در اولین فرصت تسویه بفرمایید 🙏)';return s}
+function sendInv(i,mode){var inv=DB.invs[i];if(!inv)return;
+ if(!inv.phone){toast('برای این مشتری شماره‌ای ثبت نشده','bad');return}
+ var ph=intl(inv.phone);
+ if(mode==='wa'){window.open('https://wa.me/'+ph+'?text='+encodeURIComponent(invText(inv)),'_blank')}
+ else{window.location.href='sms:'+ph+'?body='+encodeURIComponent(invText(inv))}}
+function sendLast(mode){if(!lastInv){toast('اول فاکتور ثبت کنید','bad');return}sendInv(DB.invs.indexOf(lastInv),mode)}
+
+/* ============ انبار ============ */
+function doSaveProd(){var n=G('prname').value.trim();
+ if(!n){toast('نام کالا را بنویسید','bad');return}
+ var price=clean(G('prprice').value),buy=clean(G('prbuy').value),st=Math.max(0,Number(G('prstock').value||0)),cat=G('prcat').value,ex=null;
+ DB.prods.forEach(function(p){if(p.name===n)ex=p});
+ if(ex){if(price)ex.price=price;if(buy)ex.buy=buy;ex.stock=st;ex.cat=cat;toast('کالا به‌روزرسانی شد ✅','ok')}
+ else{DB.prods.push({name:n,cat:cat,stock:st,price:price,buy:buy});toast('کالا ثبت شد ✅','ok')}
+ save();G('prname').value='';G('prstock').value='';G('prprice').value='';G('prbuy').value='';
+ renderAll()}
+function renderPlist(){if(!DB.prods.length){G('plist').innerHTML='<div class="empty">انبار خالی است — اول کالا ثبت کنید</div>';return}
+ var cats={};DB.prods.forEach(function(p){if(!cats[p.cat])cats[p.cat]=[];cats[p.cat].push(p)});
+ var h='';
+ Object.keys(cats).forEach(function(c){
+  h+='<div class="cat">📁 '+c+'</div>';
+  cats[c].forEach(function(p){var i=DB.prods.indexOf(p);
+   h+='<div class="item"><span>'+(p.stock<=0?'⛔ ':p.stock<=3?'⚠️ ':'✅ ')+p.name+'<br><small>فروش: '+fa(p.price)+' ت | خرید: '+fa(p.buy||0)+' ت</small></span><span style="text-align:left">موجودی: <b>'+fa(p.stock)+'</b><br><button class="btn green sm" onclick="addStock('+i+')">+ موجودی</button> <button class="btn red sm" onclick="delProd('+i+')">حذف</button></span></div>'})});
+ G('plist').innerHTML=h}
+function addStock(i){var p=DB.prods[i];askNum('شارژ موجودی',p.name+' — موجودی فعلی: '+fa(p.stock),10,function(v){
+ p.stock+=v;save();renderAll();toast(fa(v)+' عدد به '+p.name+' اضافه شد ✅','ok')})}
+function delProd(i){confirmBox('حذف کالا','«'+DB.prods[i].name+'» از انبار حذف شود؟',function(){DB.prods.splice(i,1);save();renderAll();toast('کالا حذف شد')})}
+
+/* ============ نسیه و چک ============ */
+function renderDebts(){var keys=Object.keys(DB.custs),h='',any=false;
+ keys.forEach(function(ph,idx){var c=DB.custs[ph];
+  if(c.debt>0){any=true;
+   h+='<div class="item"><span>'+c.name+'<br><small style="direction:ltr;display:inline-block">'+ph+'</small></span><span style="text-align:left"><b class="red">'+toman(c.debt)+'</b><br><button class="btn green sm" onclick="payDebt('+idx+')">دریافت 💵</button></span></div>'}});
+ if(!any)h='<div class="empty">طلبکاری ندارید 🎉</div>';
+ G('debts').innerHTML=h}
+function payDebt(idx){var ph=Object.keys(DB.custs)[idx],c=DB.custs[ph];if(!c)return;
+ askNum('دریافت از '+c.name,'بدهی فعلی: '+toman(c.debt),c.debt,function(v){
+  c.debt=Math.max(0,c.debt-v);save();renderAll();
+  toast('دریافت ثبت شد ✅'+(c.debt===0?' — حساب '+c.name+' تسویه شد 🎉':''),'ok')})}
+function doSaveCh(){var n=G('chname').value.trim(),d=G('chdate').value,a=clean(G('chamount').value);
+ if(!n||!a){toast('نام و مبلغ چک را وارد کنید','bad');return}
+ if(!d){toast('تاریخ سررسید را انتخاب کنید','bad');return}
+ DB.chks.push({name:n,amount:a,date:d,ts:Date.now()});save();
+ G('chname').value='';G('chamount').value='';G('chdate').value='';
+ renderAll();toast('چک ثبت شد ✅','ok')}
+function renderChlist(){if(!DB.chks.length){G('chlist').innerHTML='<div class="empty" style="margin-top:10px">چکی ثبت نشده</div>';return}
+ var today=new Date().toISOString().slice(0,10);
+ var sorted=DB.chks.slice().sort(function(a,b){return a.date<b.date?-1:1}),h='';
+ sorted.forEach(function(c){var i=DB.chks.indexOf(c),late=c.date<today;
+  h+='<div class="item"><span>'+(late?'⌛ ':'🗓️ ')+c.name+'<br><small>سررسید: '+fmtCh(c.date)+(late?' — گذشته':'')+'</small></span><span><b>'+toman(c.amount)+'</b> <button class="btn dark sm" onclick="delCh('+i+')">×</button></span></div>'});
+ G('chlist').innerHTML=h}
+function delCh(i){DB.chks.splice(i,1);save();renderAll();toast('چک حذف شد')}
+
+/* ============ گزارش ============ */
+function renderRep(){var t=0,p=0,cash=0,debt=0;
+ DB.invs.forEach(function(v){t+=v.total;if(v.type==='debt')debt+=v.total;else cash+=v.total;
+  v.items.forEach(function(c){p+=(c.price-(c.buy||0))*c.qty})});
+ var tc=0;DB.chks.forEach(function(c){tc+=c.amount});
+ G('rep').innerHTML=
+ '<div class="item"><span>تعداد کل فاکتورها</span><b>'+fa(DB.invs.length)+'</b></div>'+
+ '<div class="item"><span>فروش کل</span><b>'+toman(t)+'</b></div>'+
+ '<div class="item"><span>سود کل</span><b class="grn">'+toman(p)+'</b></div>'+
+ '<div class="item"><span>فروش نقدی</span><b>'+toman(cash)+'</b></div>'+
+ '<div class="item"><span>فروش نسیه</span><b class="red">'+toman(debt)+'</b></div>'+
+ '<div class="item"><span>تعداد چک‌ها</span><b>'+fa(DB.chks.length)+'</b></div>'+
+ '<div class="item"><span>جمع مبلغ چک‌ها</span><b>'+toman(tc)+'</b></div>';
+ renderSub()}
+function renderSub(){var d=daysLeft();
+ G('subinfo').innerHTML='<div class="item"><span>وضعیت اشتراک</span><b>'+(d<=0?'منقضی ⏰':isTrial()?'دوره رایگان — '+fa(d)+' روز مانده':'اشتراک فعال — '+fa(d)+' روز مانده')+'</b></div>'}
+function backup(){try{
+ var data=JSON.stringify(DB);
+ var b=new Blob([data],{type:'application/json'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(b);
+ a.download='dokanyar-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();
+ toast('فایل پشتیبان ساخته شد 📤','ok')}catch(e){toast('پشتیبان‌گیری ممکن نشد','bad')}}
+function restore(inp){var f=inp.files&&inp.files[0];if(!f)return;
+ var r=new FileReader();
+ r.onload=function(){try{
+  var d=JSON.parse(r.result);
+  if(!d||typeof d!=='object'||!('invs' in d))throw 0;
+  ['invs','prods','chks','custs','until','plan','dev','lastLic'].forEach(function(k){if(d[k]!==undefined)DB[k]=d[k]});
+  if(!DB.dev)DB.dev=genDev();
+  save();renderAll();subCheck();toast('اطلاعات بازیابی شد ✅','ok')
+ }catch(e){toast('فایل معتبر نیست','bad')}inp.value=''};
+ r.readAsText(f)}
+function resetAll(){confirmBox('پاک‌سازی همه داده‌ها','فاکتور، کالا، چک و نسیه همه پاک می‌شود. مطمئنی؟',function(){
+ DB={invs:[],prods:[],chks:[],custs:{},until:DB.until,plan:DB.plan,dev:DB.dev,lastLic:''};cart=[];lastInv=null;
+ save();renderAll();toast('همه داده‌ها پاک شد')})}
+
+/* ============ شروع ============ */
+function renderAll(){renderStats();renderWarn();renderChart();renderLasts();renderPsel();renderCart();renderPlist();renderDebts();renderChlist();renderRep();renderSub();renderLicenseUI()}
+save();subCheck();renderAll();
+</script>
+</body>
+</html>>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html>
